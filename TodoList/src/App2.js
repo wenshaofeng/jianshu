@@ -49,6 +49,8 @@ class App2 extends React.Component {
     componentDidMount(){
         axios.get('/api/todolist')
             .then((res)=>{console.log('suc')
+            console.log(res);
+            
             }).catch(()=>{
                 console.log('err');
             })
