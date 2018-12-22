@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import TodoListUI from './TodoListUI'
 import store from './store/index.js'
-
+import axios from 'axios'
 // import { CHANG_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_ITEM } from './store/actionTypes'
-import { getInputChangeAction, addTodoItem, deleteTodoItem, getTodoList } from './store/actionCreators'
+import { getInputChangeAction, addTodoItem, deleteTodoItem, getInitList } from './store/actionCreators'
 import 'antd/dist/antd.css';
 
 class TodoList extends Component {
@@ -47,9 +47,9 @@ class TodoList extends Component {
     }
 
     componentDidMount() {
-        //使用了 redux-thunk 以后 action 可以是一个函数
-       const action = getTodoList()
-       store.dispatch(action)
+            const action = getInitList()
+            store.dispatch(action)
+    
     }
 }
 
