@@ -48,6 +48,28 @@ line-height: 56px;
   }
 `
 
+export const SearchWarpper = styled.div`
+  position: relative;  
+  float: left;
+  .zoom {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    &.focused {
+      background: #777;
+      color: #fff;
+    }
+    &.zoom:hover{
+      cursor:pointer;
+    }  
+}
+
+`
+
 // &::placeholder 表示当前组件下的 placeholder
 export const NavSearch = styled.input.attrs({
     placeholder: '搜索'
@@ -68,7 +90,26 @@ export const NavSearch = styled.input.attrs({
     &::placeholder {
       color: #999;
     }
+    &.focused {
+      width: 260px;
+      .iconfont
+    }
+    &.slide-enter {
+      transition: all .33s ease-out;
+    }
+    &.slide-enter-active {
+      width: 260px;
+    }
+    &.slide-exit {
+      transition: all .33s ease-out;
+    }
+    &.slide-exit-active {
+      width: 180px;
+    }
+
 `
+
+
 
 export const Addition = styled.div`
   position: absolute;
