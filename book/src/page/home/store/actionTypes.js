@@ -1,0 +1,1 @@
+export const INIT_HOME_DATA = 'home/init-home-data'

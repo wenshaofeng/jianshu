@@ -27,13 +27,12 @@ class Header extends Component {
   }
   getListArea() {
     const { focused, list, handleChangePage, totalPage, currentPage, handleMouseEnter, handleMouseLeave, mouseEnter } = this.props
-    let JsList = list.toJS() || []
+    let JsList = list.toJS() || []  // list 是immutable数据类型，需要转换成普通的数组
     let pageList = []
 
-    if (JsList.length) {
-      let nextPageNum = (JsList.length-(currentPage*10)) > 10? 0 :(JsList.length-(currentPage*10))
-      console.log(nextPageNum);
-      for (let i = (currentPage - 1) * 10; i < currentPage*10+nextPageNum; i++) {
+    if (JsList.length) { //在循环前先判断，否则list为空，就没有key值
+      let nextPageNum = (JsList.length - ((currentPage - 1) * 10)) > 10 ? 0 : (JsList.length - (currentPage * 10)) % 10
+      for (let i = (currentPage - 1) * 10; i < currentPage * 10 + nextPageNum; i++) {
         pageList.push(<SearchInfoItem key={JsList[i]}> {JsList[i]} </SearchInfoItem>)
       }
     }
@@ -46,7 +45,8 @@ class Header extends Component {
         >
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch onClick={()=>handleChangePage(currentPage,totalPage)}>
+            <SearchInfoSwitch onClick={() => handleChangePage(currentPage, totalPage, this.spinIcon)}>
+              <i ref={(icon) => { this.spinIcon = icon }} className="iconfont spin">&#xe851;</i>
               换一批
             </SearchInfoSwitch>
           </SearchInfoTitle>
@@ -113,7 +113,7 @@ const mapStateToProps = (state) => {
     currentPage: state.getIn(['header', 'currentPage']),
     totalPage: state.getIn(['header', 'totalPage']),
     mouseEnter: state.getIn(['header', 'mouseEnter'])
-    
+
   }
 }
 
@@ -135,14 +135,24 @@ const mapDispatchToProps = (dispatch) => {
     handleMouseLeave() {
       dispatch(actionCreators.MouseLeave())
     },
-    handleChangePage(currentPage,totalPage) { //换一页
-      if(currentPage<totalPage) {
-        currentPage ++ 
-        dispatch(actionCreators.PageChange(currentPage))
-      }else{
-        dispatch(actionCreators.PageChange(1))
+    handleChangePage(currentPage, totalPage, spin) { //换一页
+      let originAngle = spin.style.transform.replace(/[^0-9]/ig, '')
+      if (originAngle) {
+        originAngle = parseInt(originAngle, 10)
+      } else {
+        originAngle = 0
       }
-      
+      spin.style.transform = `rotate(${originAngle + 360}deg)`
+      if (currentPage < totalPage) {
+        setTimeout(() => {
+          dispatch(actionCreators.PageChange(currentPage + 1))
+        }, 600);
+      } else {
+        setTimeout(() => {
+          dispatch(actionCreators.PageChange(1))
+        }, 600);
+      }
+
     }
   }
 }

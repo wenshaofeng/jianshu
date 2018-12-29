@@ -203,6 +203,36 @@ const mapStateToProps = (state) => {
 ### 14.热门搜索换页功能实现
 
 ### 15.换页旋转动画效果的实现
+React实现动画的另一种方式：首先用 `ref` 获取DOM元素，然后再用`transition`初始化动画，最后在handler方法中改变dom元素style属性来驱动动画
+```css
+.spin {
+    display: block;
+    float: left;
+    font-size: 12px;
+    margin-right: 2px;
+    transition: all .28s ease-in;
+    transform: rotate(0deg);
+    transform-origin: center center; /*  相对中心旋转 */
+  }
+
+```
+
+```javascript
+<SearchInfoSwitch onClick={() => handleChangePage(currentPage, totalPage, this.spinIcon)}>
+    <i ref={(icon) => { this.spinIcon = icon }} className="iconfont spin">&#xe851;</i>
+    换一批
+</SearchInfoSwitch>
+
+...
+
+ let originAngle = spin.style.transform.replace(/[^0-9]/ig, '')
+if (originAngle) {
+    originAngle = parseInt(originAngle, 10)
+} else {
+    originAngle = 0
+}
+spin.style.transform = `rotate(${originAngle + 360}deg)`
+```
 
 ### 16.避免无意义的Ajax请求
 

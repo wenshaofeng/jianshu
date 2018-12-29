@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.div`
 `
 
 export const Logo = styled.a.attrs({
-    href: '/'
+  href: '/'
 })`
     position: absolute;
     top: 0;
@@ -72,8 +72,8 @@ export const SearchWarpper = styled.div`
 
 // &::placeholder 表示当前组件下的 placeholder
 export const NavSearch = styled.input.attrs({
-    placeholder: '搜索'
-  })`
+  placeholder: '搜索'
+})`
     
     height: 36px;
     width: 180px
@@ -116,6 +116,7 @@ export const SearchInfo = styled.div`
   padding: 0 20px;
   box-shadow: 0 0 8px rgba(0,0,0,.2);
   background: #fff;
+  z-index : 99;
  
 `
 
@@ -136,9 +137,9 @@ export const SearchInfoSwitch = styled.span`
     float: left;
     font-size: 12px;
     margin-right: 2px;
-    transition: all .28s ease-in;
+    transition: all .4s ease-in;
     transform: rotate(0deg);
-    transform-origin: center center;
+    transform-origin: center center; 
   }
 `
 
