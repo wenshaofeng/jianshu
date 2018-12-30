@@ -4,6 +4,7 @@ import Topic from './components/Topic'
 import List from './components/List'
 import Recommend from './components/Recommend'
 import Writer from './components/Writer'
+import DownloadApp from './components/Download'
 import { actionCreators } from './store/index'
 import { connect } from 'react-redux'
 import { HomeWrapper, HomeLeft, HomeRight, BackTop } from './styled'
@@ -23,6 +24,7 @@ class Home extends Component {
                 </HomeLeft>
                 <HomeRight>
                     <Recommend />
+                    <DownloadApp />
                     <Writer />
                 </HomeRight>
             </HomeWrapper>

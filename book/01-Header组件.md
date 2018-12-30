@@ -6,7 +6,7 @@
 >在本人做该项目的时候，最新版的 styled-components v4 已经将原有的 injectGlobal() 方法替换成了 createGlobalStyle() ，而且用法也和之前的 injectGlobal 方法不同了。
 具体改变 指南 [styled-components组件升级v4版本的全局样式踩坑](https://www.jianshu.com/p/4c69abc91971)
 
-### 2.使用styled-components完成Header组件布局
+### 2、3.使用styled-components完成Header组件布局
 
 header/index.js 就好像一个聚合组件，把header/style.js 中的每个小组件组合在一起
 
@@ -200,6 +200,7 @@ const mapStateToProps = (state) => {
 ### 13.代码优化
 - 解构赋值
 - if 改为 switch
+
 ### 14.热门搜索换页功能实现
 
 ### 15.换页旋转动画效果的实现

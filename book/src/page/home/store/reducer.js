@@ -5,12 +5,16 @@ import { fromJS } from 'immutable' //不可修改  生成的immutable对象 不�
 const defaultState = fromJS({
     topicList: [],
     articleList: [],
+    recommendList: [],
+    writerList: [],
 })
 
 const InitHomeData = (state, action) => {
     return state.merge({
         topicList: action.topicList,
         articleList: action.articleList,
+        recommendList: action.recommendList,
+        writerList: action.writerList
     })
 }
 

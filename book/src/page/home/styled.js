@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 // Home 页主要布局结构
 export const HomeWrapper = styled.div`
   overflow: hidden;
@@ -35,7 +36,6 @@ img{
 }
 
 `
-
 
 // Topic 组件 
 export const TopicWrapper = styled.div`
@@ -98,5 +98,108 @@ export const ListInfo = styled.div`
     line-height: 24px;
     font-size: 13px;
     color: #999;
+  }
+`
+
+//Recommend组件
+export const RecommendWrapper = styled.div`
+  width: 280px;
+  margin: 24px 0;
+`
+export const RecommendItem = styled.div`
+  width: 280px;
+  height: 50px;
+  margin-bottom: 6px;
+  background: url(${(props) => props.cover});
+  background-size: contain;
+`
+
+//下载APP 组件
+export const DownloadArea = styled.div`
+  margin-top: 5px;
+  margin-bottom: 30px;
+  padding: 10px 22px;
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #fff;
+  display: flex;
+  img {
+    width: 60px;
+    height: 60px;
+    opacity: 0.85;
+  }
+  .info {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 7px;
+    .title {
+      font-size: 15px;
+      color: #333;
+    }
+    .desc {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+`;
+
+// Writer组件
+export const WriterWrapper = styled.div`
+  
+
+  .title {
+    font-size: 14px;
+    color: #969696;
+    .right {
+      float: right;
+      cursor: pointer;
+    }
+    .icon {
+      margin: 2px 5px 0 0;
+    }
+  }
+  .viewAll {
+    margin-top: 20px;
+    text-align: center;
+    padding: 7px 7px 7px 12px;
+    left: 0;
+    width: 280px;
+    font-size: 13px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+  }
+
+`
+export const WriterItem = styled.div`
+  margin-top: 15px;
+  line-height: 20px;
+  img {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+  }
+  .info {
+    span {
+      display: block;
+      font-size: 14px;
+    }
+    .desc {
+      margin-top: 2px;
+      font-size: 12px;
+      color: #969696;
+    }
+  }
+  .right {
+    float: right;
+    margin-top: -42px;
+    cursor: pointer;
+    color: #42c02e;
   }
 `

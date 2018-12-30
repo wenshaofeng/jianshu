@@ -1,8 +1,7 @@
 {
   "success": true,
   "data": {
-    "topicList": [
-      {
+    "topicList": [{
         "id": 1,
         "title": "故事会",
         "imgUrl": "https://upload.jianshu.io/collections/images/95/1.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
@@ -38,8 +37,7 @@
         "imgUrl": "https://upload.jianshu.io/collections/images/4/sy_20091020135145113016.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
       }
     ],
-    "articleList": [
-      {
+    "articleList": [{
         "id": "a1",
         "title": "大二暑假，去了7座城市，边旅行边赚钱",
         "desc": "这是少年探险记的 第3期 目的地：7座城池 暑假为期一个月的旅行结束 8月7号凌晨，我顺利地抵达长沙黄花国际机场。 旁若无人地录制完最后一段旅行...",
@@ -64,30 +62,28 @@
         "cover": "https://upload-images.jianshu.io/upload_images/1780541-58a7b62d0e6a81d6.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
       }
     ],
-    "recommendList": [
-      {
+    "recommendList": [{
         "id": "1",
-        "cover": "https://cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png"
+        "cover": "//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/Days.png"
       },
       {
         "id": "2",
-        "cover": "https://cdn2.jianshu.io/assets/web/banner-s-4-b70da70d679593510ac93a172dfbaeaa.png"
+        "cover": "//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/Months.png"
       },
       {
         "id": "3",
-        "cover": "https://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
+        "cover": "//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/Serialize.png"
       },
       {
         "id": "4",
-        "cover": "https://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+        "cover": "//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/CopyRight.png"
       },
       {
         "id": "5",
-        "cover": "https://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+        "cover": "//raw.githubusercontent.com/Toxicfy/Jianshu-React/master/src/statics/image/BigSchool.png"
       }
     ],
-    "writerList": [
-      {
+    "writerList": [{
         "id": "w1",
         "nickname": "须僧",
         "desc": "写了258.3k字 · 4.1k喜欢",

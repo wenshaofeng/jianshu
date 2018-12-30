@@ -6,7 +6,8 @@ const initHomeData = (data) => ({
     type: actionTypes.INIT_HOME_DATA,
     topicList: fromJS(data.topicList),
     articleList: fromJS(data.articleList),
-    recommendList: fromJS(data.recommendList)
+    recommendList: fromJS(data.recommendList),
+    writerList: fromJS(data.writerList)
 })
 
 export const fetchHomeData = () => {
