@@ -7,6 +7,8 @@ const defaultState = fromJS({
     articleList: [],
     recommendList: [],
     writerList: [],
+    articlePage: 1,
+    showScroll: false
 })
 
 const InitHomeData = (state, action) => {
@@ -18,9 +20,21 @@ const InitHomeData = (state, action) => {
     })
 }
 
+const AddArticle = (state, action) => {
+    return state.merge({
+        articleList: state.get('articleList').concat(action.list),
+        articlePage: action.nextPage
+    })
+}
+
 export default (state = defaultState, action) => {
-    if (action.type === actionTypes.INIT_HOME_DATA) {
-        return InitHomeData(state, action)
+    switch (action.type) {
+        case actionTypes.INIT_HOME_DATA:
+            return InitHomeData(state, action)
+        case actionTypes.ADD_ARTICLE:
+            return AddArticle(state, action)
+        case actionTypes.TOGGLE_TOP_SHOW:
+            return state.set('showScroll', action.show)
+        default: return state
     }
-    return state
 }

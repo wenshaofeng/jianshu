@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Swiper from 'swiper/dist/js/swiper.min.js';
 import 'swiper/dist/css/swiper.min.css';
 import { SwiperWrapper } from '../styled'
 
 
 
-class Hswiper extends Component {
+class Hswiper extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {}
@@ -52,7 +52,7 @@ class Hswiper extends Component {
                         </div>
                         <div className="swiper-slide">
                             <img className="banner-img" src="//upload.jianshu.io/admin_banners/web_images/4588/c9d175a9865206d371742d53c41ed4a042c5d00b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" alt="cover4" />
-                        </div>        
+                        </div>
                     </div>
                     <div className="swiper-button-prev swiper-button-black"></div>
                     <div className="swiper-button-next swiper-button-black"></div>

@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import { DetailWrapper, Header, Content } from './style'
 
-class Detail extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
-        return ( <div> Detail </div> );
+class Detail extends PureComponent {
+    render() {
+        return (
+            <DetailWrapper>
+                <Header>科比布莱恩特</Header>
+
+            </DetailWrapper>
+        );
     }
 }
- 
+
 export default Detail;

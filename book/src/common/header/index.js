@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from './store'
 import { CSSTransition } from "react-transition-group"
+import { Link } from 'react-router-dom'
 import {
   HeaderWrapper,
   Logo,
@@ -63,7 +64,9 @@ class Header extends Component {
     const { focused, handleBlur, handleFocus, list } = this.props
     return (
       <HeaderWrapper>
-        <Logo />
+        <Link to='/'>
+          <Logo />
+        </Link>
         <Nav>
           <NavItem className='left active'>首页</NavItem>
           <NavItem className='left'>下载</NavItem>
@@ -124,7 +127,7 @@ const mapDispatchToProps = (dispatch) => {
       if (list.size === 0) {
         dispatch(actionCreators.getList())   //只在list为空时获取异步数据
       }
-      dispatch(actionCreators.searchFocus()) //搜索框变化
+      dispatch(actionCreators.searchFocus()) //搜索框变化动画
     },
     handleBlur() {
       dispatch(actionCreators.searchBlur())

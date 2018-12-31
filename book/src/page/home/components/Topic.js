@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { TopicWrapper, TopicItem } from '../styled'
+import React, { PureComponent } from 'react';
+import { TopicWrapper, TopicItem, CollectionMore } from '../styled'
 import { connect } from 'react-redux'
-
-class Topic extends Component {
+import { Icon } from 'antd'
+class Topic extends PureComponent {
     render() {
         const { list } = this.props
         return (
@@ -21,6 +21,12 @@ class Topic extends Component {
                         )
                     })
                 }
+                <CollectionMore>
+                    <a target="_blank">
+                        更多热门专题
+                 <Icon type="right" className="icon-right" />
+                    </a>
+                </CollectionMore>
             </TopicWrapper>
         );
     }

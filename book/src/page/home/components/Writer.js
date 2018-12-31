@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { WriterWrapper, WriterItem } from '../styled'
 import { Icon } from "antd";
 import { connect } from 'react-redux'
 
-class Writer extends Component {
+class Writer extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {}

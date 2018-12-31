@@ -31,6 +31,10 @@ img{
 .swiper-button-next,.swiper-button-prev{
   transition:opacity .5s;
 }
+.swiper-button-next,.swiper-button-prev{
+  padding:10px;
+  background-color: rgba(0,0,0,.6);
+}
 .swiper-container{
   z-index:0;
 }
@@ -66,6 +70,26 @@ export const TopicItem = styled.div`
     margin-right: 10px;
   }
 `
+
+export const CollectionMore = styled.div`
+  display: inline-block;
+  line-height: 34px;
+  margin-left: 20px;
+  a {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #787878;
+    cursor: pointer;
+  }
+  a:hover {
+    color: #787878;
+  }
+  .icon-right {
+    margin-left: 5px;
+  }
+`;
+
+
 // List 组件
 export const ListItem = styled.div`
   overflow: hidden;
@@ -100,6 +124,18 @@ export const ListInfo = styled.div`
     color: #999;
   }
 `
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #a5a5a5;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  margin: 30px 0;
+  cursor: pointer;
+`
+
 
 //Recommend组件
 export const RecommendWrapper = styled.div`
@@ -147,8 +183,6 @@ export const DownloadArea = styled.div`
 
 // Writer组件
 export const WriterWrapper = styled.div`
-  
-
   .title {
     font-size: 14px;
     color: #969696;
@@ -171,7 +205,9 @@ export const WriterWrapper = styled.div`
     background-color: #f7f7f7;
     border: 1px solid #dcdcdc;
     border-radius: 4px;
+    cursor:pointer;
   }
+  
 
 `
 export const WriterItem = styled.div`
@@ -202,4 +238,18 @@ export const WriterItem = styled.div`
     cursor: pointer;
     color: #42c02e;
   }
+`
+
+//回到顶部
+export const BackTop = styled.div`
+  position: fixed;
+  right: 60px;
+  bottom: 100px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  cursor: pointer;
 `

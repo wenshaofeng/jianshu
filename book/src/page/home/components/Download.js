@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { DownloadArea } from "../styled";
 import { Icon } from "antd";
-class DownloadApp extends Component {
+class DownloadApp extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {};

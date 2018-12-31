@@ -10,6 +10,12 @@ const initHomeData = (data) => ({
     writerList: fromJS(data.writerList)
 })
 
+const AddArticle = (data, nextPage) => ({
+    type: actionTypes.ADD_ARTICLE,
+    list: fromJS(data),
+    nextPage
+})
+
 export const fetchHomeData = () => {
     return (dispatch) => {
         axios.get('/api/home.json')
@@ -18,8 +24,27 @@ export const fetchHomeData = () => {
                 console.log(data);
                 const action = initHomeData(data)
                 dispatch(action)
+
             }).catch(() => {
                 console.log('error heihei');
             })
     }
 }
+
+export const getMoreArticle = (page) => {
+    return (dispatch) => {
+        axios.get('/api/homeList.json?page=' + page)
+            .then((res) => {
+                const data = res.data.data
+                const action = AddArticle(data, page + 1)
+                dispatch(action)
+            }).catch(() => {
+                console.log('error');
+            })
+    }
+}
+
+export const toggleTopShow = (value) => ({
+    type: actionTypes.TOGGLE_TOP_SHOW,
+    show: value
+})
