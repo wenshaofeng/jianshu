@@ -1,0 +1,1 @@
+export const GET_DETAIL_DATA = 'detail/get-home-data'

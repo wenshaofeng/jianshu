@@ -11,10 +11,7 @@ import { HomeWrapper, HomeLeft, HomeRight, BackTop } from './styled'
 import { Icon } from 'antd'
 
 class Home extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
+
     handleScrollTop() {
         var timer = setInterval(() => {
             if (document.documentElement.scrollTop) {

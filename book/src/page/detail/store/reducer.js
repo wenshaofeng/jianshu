@@ -3,7 +3,8 @@ import { fromJS } from 'immutable' //不可修改  生成的immutable对象 不�
 
 //转化成immutable对象
 const defaultState = fromJS({
-
+    title: '',
+    content: ''
 })
 
 
@@ -11,6 +12,11 @@ const defaultState = fromJS({
 
 export default (state = defaultState, action) => {
     switch (action.type) {
+        case actionTypes.GET_DETAIL_DATA:
+            return state.merge({
+                'title': action.title,
+                'content': action.content
+            })
         default: return state
     }
 }
