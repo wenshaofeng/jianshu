@@ -123,6 +123,13 @@ export const ListInfo = styled.div`
     font-size: 13px;
     color: #999;
   }
+  .icon {
+    margin-left: 8px;
+    color: #b4b4b4;
+  }
+  .author {
+    color: #b4b4b4;
+  }
 `
 export const LoadMore = styled.div`
   width: 100%;

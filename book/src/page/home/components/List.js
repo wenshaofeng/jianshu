@@ -3,6 +3,8 @@ import { ListItem, ListInfo, LoadMore } from '../styled'
 import { connect } from 'react-redux'
 import { actionCreators } from '../store/index'
 import { Link } from 'react-router-dom'
+import { Icon } from "antd";
+
 class List extends PureComponent {
   constructor(props) {
     super(props);
@@ -15,9 +17,9 @@ class List extends PureComponent {
         {
           list.map((item, index) => {
             return (
-              <Link key={index} to={`/detail`}>
+              <Link key={index} to={`/detail/${index}`}>
                 <ListItem key={index}>
-                  <img className='pic' src={item.get('cover')} alt="" />
+                  <img className='pic' src={item.get('image')} alt="" />
                   <ListInfo>
                     <h3 className='title'>
                       {item.get('title')}
@@ -25,6 +27,11 @@ class List extends PureComponent {
                     <p className='desc'>
                       {item.get('desc')}
                     </p>
+                    <div className="author">
+                      <span>{item.get('author')} </span>
+                      <Icon type="message" theme="filled" className="icon" />
+                      <Icon type="heart" theme="filled" className="icon" />
+                    </div>
                   </ListInfo>
                 </ListItem>
               </Link>

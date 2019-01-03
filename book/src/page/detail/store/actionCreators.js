@@ -4,8 +4,7 @@ import { fromJS } from 'immutable'
 
 const getDetailData = (data) => ({
     type: actionTypes.GET_DETAIL_DATA,
-    title: fromJS(data.title),
-    content: fromJS(data.content)
+    content: fromJS(data)
 })
 
 export const fetchDetailData = () => {
@@ -13,13 +12,15 @@ export const fetchDetailData = () => {
         axios.get('/api/detail.json')
             .then((res) => {
                 const data = res.data.data
-                console.log(data);
                 const action = getDetailData(data)
                 dispatch(action)
             }).catch(() => {
                 console.log('error detailData');
-
             })
     }
-
 }
+
+export const toggleTopShow = (value) => ({
+    type: actionTypes.TOGGLE_TOP_SHOW,
+    show: value
+})

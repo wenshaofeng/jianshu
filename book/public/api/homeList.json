@@ -2,27 +2,31 @@
   "success": true,
   "data": [{
       "id": "a5",
+      "author": "菜鸟1号",
       "title": "史上最全Android build.gradle配置详解",
       "desc": "一、Project的build.gradle文件： 对应的build.gradle代码如下： buildscript{}闭包里是gradle脚本...",
-      "cover": "https://upload-images.jianshu.io/upload_images/7320376-12dd54466a937f05.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+      "image": "https://upload-images.jianshu.io/upload_images/7320376-12dd54466a937f05.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
     },
     {
       "id": "a6",
+      "author": "菜鸟2号",
       "title": "彩铅基础10-小水珠绘画过程",
       "desc": "昨天的说太应付了，今天我可是很认真了，趁妹妹睡觉这一个钟认认真真了哈哈哈，其实还是很仓促，笔触十分粗糙，实在太懒得削铅笔了，浪费时间，画完手有点...",
-      "cover": "https://upload-images.jianshu.io/upload_images/12756585-3fec9814ef3a3877.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+      "image": "https://upload-images.jianshu.io/upload_images/12756585-3fec9814ef3a3877.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
     },
     {
       "id": "a7",
+      "author": "菜鸟3号",
       "title": "程序员都是吃青春饭的?一张图说出了程序员的出路",
       "desc": "有人说程序员只能吃青春饭，企业在招聘时会很在意程序员的年龄，大龄程序员一旦离职找工作就会变得艰难。面对年龄很多程序员都表示束手无策。其实，程序员...",
-      "cover": "https://upload-images.jianshu.io/upload_images/14855646-3c8dcad4288da8fd.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+      "image": "https://upload-images.jianshu.io/upload_images/14855646-3c8dcad4288da8fd.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
     },
     {
       "id": "a8",
+      "author": "菜鸟5号",
       "title": "看女程序员是怎么坑大师兄的, 网友: 真的惨，笑死我了!",
       "desc": "我有一个师兄，一个很神奇的师兄，之所以说他神奇是因为他真的很神奇，师兄是个典型的学霸，本科跟我一样是学土木工程的，后来考研又跨专业考到了计算机，...",
-      "cover": "https://upload-images.jianshu.io/upload_images/14212122-ed4e267017c5e052?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+      "image": "https://upload-images.jianshu.io/upload_images/14212122-ed4e267017c5e052?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
     }
 
   ]

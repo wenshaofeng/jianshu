@@ -22,6 +22,7 @@ export const Content = styled.div`
   color: #2f2f2f;
   img {
     width: 100%;
+    margin:0 auto;
   }
   p {
     margin: 25px 0;
@@ -31,4 +32,17 @@ export const Content = styled.div`
   b {
     font-weight:bold;
   }
-` 
+`
+//回到顶部
+export const BackTop = styled.div`
+  position: fixed;
+  right: 60px;
+  bottom: 100px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+`
