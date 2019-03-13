@@ -1,5 +1,7 @@
 ![](https://upload-images.jianshu.io/upload_images/9249356-cfa04372c58ea0d7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+![](http://www.devio.org/io/githubapp/redux-flow.png)
+
 >Redux设计和使用的三项原则
 
 ![](https://upload-images.jianshu.io/upload_images/9249356-b47fdd2e77aae93e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -12,10 +14,10 @@
    `store.getState` 获取到store里的数据内容
    `store.subscribe`  定位store的改变
 
-- Action
+- Action： 普通对象，用于描述事件行为，改变State
 - Store 
-- Reducers 
-
+- Reducers： 纯函数，用于对State的业务处理(不能更改State)
+- State： React中的状态，是只读对象，不可直接修改
 
 >在使用redux-devtools的时候，注意版本问题，否则会报未知的bug
 

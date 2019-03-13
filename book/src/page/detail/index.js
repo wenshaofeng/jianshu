@@ -1,8 +1,13 @@
 import React, { Component, Fragment } from 'react';
+
 import { DetailWrapper, Header, Content, BackTop } from './style'
+import { Icon } from 'antd'
+import DetailAuthor from './components/DetailAuthor'
+import DetailFooter from './components/DetailFooter'
+import Ad from './components/Ad'
+
 import { actionCreators } from './store/index'
 import { connect } from 'react-redux'
-import { Icon } from 'antd'
 import { toJS } from 'immutable'
 
 class Detail extends Component {
@@ -17,24 +22,27 @@ class Detail extends Component {
     }
 
     render() {
-        const { content, showScroll, match, articleList, history } = this.props
+        const { content, showScroll, match, articleList, history, articleMes } = this.props
         let id = match.params.id
 
         let JScontent = content.toJS(),
-            JSArticle = articleList.toJS()
-        if (!JSArticle[id]) {
+            JSArticle = articleList.toJS()[id]
+        if (!JSArticle) {
             history.push("/");
             return <Fragment />;
         }
         let currentContent = JScontent[id],
-            currentTitle = JSArticle[id].title
+            currentTitle = JSArticle.title
         return (
             <DetailWrapper>
                 <Header>{currentTitle}</Header>
+                <DetailAuthor currentData={JSArticle} content={articleMes} />
                 <Content dangerouslySetInnerHTML={{ __html: currentContent }} />
+                <Ad />
                 {showScroll ? <BackTop onClick={this.handleScrollTop}>
                     <Icon type="up" />
                 </BackTop> : null}
+                <DetailFooter avator={JSArticle.avator} name={JSArticle.author} />
             </DetailWrapper>
         );
     }
@@ -58,6 +66,7 @@ const mapState = (state) => ({
     showScroll: state.getIn(['detail', 'showScroll']),
     content: state.getIn(['detail', 'content']),
     articleList: state.getIn(['home', 'articleList']),
+    articleMes: state.getIn(['detail', 'articleMes'])
 })
 
 const mapDispatch = (dispatch) => ({

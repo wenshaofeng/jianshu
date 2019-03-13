@@ -1,10 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { Provider } from 'react-redux'; //react-redux核心组件
 import { BrowserRouter, Route } from 'react-router-dom'
+
 import Header from './common/header/index' //头部header组件
 import Home from './page/home'
 import Detail from './page/detail'
+import Login from './page/login'
+
 import store from './store/index'
+
 import { GlobalStyle } from './style'
 import { GlobalIconStyle } from './statics/iconfont/iconfont'
 
@@ -20,8 +24,9 @@ class App extends Component {
           <BrowserRouter>
             <Fragment>
               <Header />
-              <Route path='/' exact component={Home} />>
-              <Route path='/detail/:id' exact component={Detail} />>
+              <Route path='/' exact component={Home} />
+              <Route path='/detail/:id' exact component={Detail} />
+              <Route path='/login' exact component={Login} />
             </Fragment>
           </BrowserRouter>
         </Provider>

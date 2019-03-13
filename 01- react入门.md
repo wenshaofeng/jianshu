@@ -71,3 +71,15 @@ React.createElement(
 * 组件写样式，不要直接用class，会和es6关键字同名，得用 `className`
 * 组件属性：`dangerousSetInnerHTML` 危险的转换html
 ![](https://upload-images.jianshu.io/upload_images/9249356-8453b3041a837ff0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+
+### JSX是进步还是倒退
+
+在HTML中的 `onclick` 缺点
+- onclick添加的事件处理函数是在全局环境下执行的，污染了全局环境
+- 如果给多个DOM元素添加 click 事件，会影响网页性能，因为网页需要的事件处理函数越多，性能就会降低
+- 使用 click 的DOM元素，如果需要动态的删除，需要注销 时间处理器，否则可能造成内存泄露
+
+而 React 中的 onClick ，是使用了**事件委托**的方式处理点击事件，无论有多少个onClick出现， 其实最后都只在DOM树上添加了一个事件处理函数， 挂在最顶层的DOM节点上。 所有的点击事件都被这个事件处理函数捕获， 然后根据具体组件分配给特定函数。

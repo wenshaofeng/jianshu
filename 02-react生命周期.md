@@ -1,4 +1,9 @@
+### [react（一）：组件的生命周期](https://www.cnblogs.com/jinzhou/p/9096825.html)
+
 ## 生命周期函数
+![](https://upload-images.jianshu.io/upload_images/9249356-ea7176534fe68539.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 ![](https://upload-images.jianshu.io/upload_images/9249356-11bc7536235b3a57.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
@@ -28,3 +33,18 @@ React生命周期函数的四大阶段：Initialization (初始化)  --> Mountin
 ![](https://upload-images.jianshu.io/upload_images/9249356-9b1886bbaf9f8772.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **一般用`componentDidMount()`来发送ajxa请求**
+
+**render**
+render函数是一个纯函数，他并不进行实际上的渲染动作，他只是一个JSX描述的结构，最终是由React来进行渲染过程，render函数中不应该有任何操作，对页面的描述完全取决于this.state和this.props的返回结果，不能在render调用this.setState
+>有一个公式总结的非常形象     **UI=render（data）**
+
+**componentDidMount**
+componentDidMount函数作用就大得多，由于这一过程通常只能在浏览器端调用，所以我们在这里获取异步数据，而且在componentDidMount调用的时候，组件已经被装载到DOM树上了，还有，可以在这里执行其他库的代码，比如Jquery。在服务端渲染时没有该生命周期
+**在这个方法中this.setState会引起组件的重新渲染**
+
+**shouldComponentUpdate(nextProps,nextState)**
+  这个方法决定组件是否继续执行更新过程。 
+  默认是true，继续更新；false阻止更新。
+  一般是通过比较nextPops，nextState和当前组件的props，state来决定返回结果。 
+  这个方法可以减少不必要的渲染，优化组件性能。
+  >原因：根据渲染流程，首先会判断shouldComponentUpdate是否需要更新。如果需要更新，调用render方法生成新的虚拟DOM与旧的虚拟DOM进行对比(render只是返回一个UI描述)，如果对比不一致，则根据最小粒度改变去更新DOM。

@@ -177,9 +177,11 @@ export const Button = styled.div`
   font-size: 14px;
   &.reg {
     color: #ec6149;
+    cursor:pointer;
   }
   &.writting {
     color: #fff;
     background: #ec6149;
+    cursor:pointer;
   }
 `

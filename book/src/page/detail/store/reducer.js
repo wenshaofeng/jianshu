@@ -4,7 +4,8 @@ import { fromJS } from 'immutable' //不可修改  生成的immutable对象 不�
 //转化成immutable对象
 const defaultState = fromJS({
     content: [],
-    showScroll: false
+    showScroll: false,
+    articleMes: "2018.10.07 00:12* 字数 1201 阅读 1155 评论 7 喜欢 23",
 })
 
 
