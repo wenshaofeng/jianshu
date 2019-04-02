@@ -4,8 +4,9 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import Header from './common/header/index' //头部header组件
 import Home from './page/home'
-import Detail from './page/detail'
-import Login from './page/login'
+import { LoadableDetail } from './loading/loadable' // 详情页
+import { LoadableLogin } from './loading/loadable' // 登录页
+import Writer from './page/write' // 写文章页
 
 import store from './store/index'
 
@@ -25,8 +26,9 @@ class App extends Component {
             <Fragment>
               <Header />
               <Route path='/' exact component={Home} />
-              <Route path='/detail/:id' exact component={Detail} />
-              <Route path='/login' exact component={Login} />
+              <Route path='/detail/:id' exact component={LoadableDetail} />
+              <Route path='/login' exact component={LoadableLogin} />
+              <Route path='/write' exact component={Writer} />
             </Fragment>
           </BrowserRouter>
         </Provider>

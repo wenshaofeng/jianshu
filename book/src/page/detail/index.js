@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-
+import { withRouter } from 'react-router-dom'
 import { DetailWrapper, Header, Content, BackTop } from './style'
 import { Icon } from 'antd'
 import DetailAuthor from './components/DetailAuthor'
@@ -83,4 +83,4 @@ const mapDispatch = (dispatch) => ({
     }
 })
 
-export default connect(mapState, mapDispatch)(Detail);
+export default connect(mapState, mapDispatch)(withRouter(Detail));
